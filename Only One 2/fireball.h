@@ -28,6 +28,7 @@ public:
 	int hitboxHeight = static_cast<int>(26 * scaleX);
 
 	FireBall();
+	void reset(Uint32 currentTime);
 	void spawn(Uint32 currentTime,Player& player, Uint32& lastSpawnTime);
 	void update(float deltaTime , Uint32 curentTime);
 	std::vector<FireballIndex>& getFireball() { return fireball_; }
