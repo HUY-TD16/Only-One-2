@@ -8,6 +8,7 @@
 class Explosion {
 public:
 	Explosion();
+	void reset(Uint32 currentTime);
 	void spawn(Uint32 currentTime, Uint32& lastExplosionTime, Uint32 gameStartTime);
 	void update(Uint32 currentTime );
 	std::vector<ExplosionIndex>& getExplosion() { return explosion_; }
