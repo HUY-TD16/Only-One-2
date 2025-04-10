@@ -11,7 +11,7 @@ extern SDL_Renderer* gRenderer;
 class Interface {
 public:
 	Interface();
-	void GameOver();
+	void GameOver(Uint32 currentTime , bool isNewHighScore);
 	void Pause();
 	void Menu();
 	void Timer(Uint32 currentTime);
@@ -22,15 +22,21 @@ public:
 	SDL_Rect HighscoreTextRect = { SCREEN_WIDTH / 2 - 150 , 300 , 300 , 100 };
 	SDL_Rect MusicTextRect = { SCREEN_WIDTH / 2 - 60 , 400 , 120 , 100 };
 
-	// Pause button
+	// Playing button
 	SDL_Rect PauseRect = { 10 , 10 , 20 , 20 };
-
+	// Pause button
+	SDL_Rect continuteRect = { SCREEN_WIDTH / 2 - 80 , SCREEN_HEIGHT / 2 - 100 , 160 , 100 };
+	SDL_Rect resumeRect = { SCREEN_WIDTH / 2 - 60 , SCREEN_HEIGHT / 2  , 120 , 100 };
+	SDL_Rect backmenuRect = { SCREEN_WIDTH / 2 - 70 , SCREEN_HEIGHT / 2 + 100 , 140 , 100 };
+	// GameOver button
+	SDL_Rect replayRect = { SCREEN_WIDTH / 2 - 150 , SCREEN_HEIGHT / 2 + 150 , 100 , 100 };
+	SDL_Rect menuRect = { SCREEN_WIDTH / 2 + 50 , SCREEN_HEIGHT / 2 + 150 , 100 , 100 };
 private:
 	LTexture RecordText;
 	int tic, second, minutes;
 	std::string recordText;
 	LTexture MenuDisplay;
-	LTexture MenuText;
+	LTexture gText;
 	LTexture PauseDisplay;
 	LTexture SkillDisplay;
 
