@@ -20,6 +20,9 @@ const int DASHDISTANCE = 100;
 // Thời gian
 const Uint32 frameDelay = 100;
 const Uint32 increaseInterval = 20000;
+const Uint32 dashCoolDown = 5000;
+const Uint32 clearCoolDown = 10000;
+const Uint32 invincibilityCoolDown = 10000;
 
 void updateFrameTime();
 bool init();
