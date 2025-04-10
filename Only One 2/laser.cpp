@@ -43,6 +43,11 @@ void Lasers::spawn(Uint32 currentTime, Player& player, Uint32& lastLaserTime, Ui
 	}
 }
 
+void Lasers::reset(Uint32 currentTime) {
+	laser_.clear();
+	laserPerSpawn = 1;
+	lastIncreaseTime = currentTime + laserStartDelay;
+}
 void Lasers::update(Uint32 currentTime) {
 	for (auto& laser : laser_) {
 		if (!laser.isActive && currentTime - laser.spawnTime >= laserWarningTime) {
