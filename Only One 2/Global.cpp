@@ -55,3 +55,14 @@ void close() {
 bool isButtonClick(int x, int y, SDL_Rect button) {
 	return (x >= button.x && x <= button.x + button.w && y >= button.y && y <= button.y + button.h);
 }
+
+//void loadMedia(Animation& animation) {
+//	animation.loadSpritesheet(gRenderer, "Image/run_right.png", Action::RUN, Direction::RIGHT, 8);
+//	animation.loadSpritesheet(gRenderer, "Image/run_left.png", Action::RUN, Direction::LEFT, 8) ;
+//	animation.loadSpritesheet(gRenderer, "Image/run_front.png", Action::RUN, Direction::FRONT, 8) ;
+//	animation.loadSpritesheet(gRenderer, "Image/run_back.png", Action::RUN, Direction::BACK, 8) ;
+//	animation.loadSpritesheet(gRenderer, "Image/idle_right.png", Action::IDLE, Direction::RIGHT, 4) ;
+//	animation.loadSpritesheet(gRenderer, "Image/idle_left.png", Action::IDLE, Direction::LEFT, 4) ;
+//	animation.loadSpritesheet(gRenderer, "Image/idle_front.png", Action::IDLE, Direction::FRONT, 4) ;
+//	animation.loadSpritesheet(gRenderer, "Image/idle_back.png", Action::IDLE, Direction::BACK, 4);
+//}
