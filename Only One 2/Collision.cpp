@@ -10,8 +10,8 @@ bool Collision::checkCollision(Player& player, bool isInvincible,
 	if (!isInvincible) {
 
 		SDL_Rect playerRect = { player.getX()-10 , player.getY()-10 , PLAYER_SIZE , PLAYER_SIZE };
-		/*SDL_SetRenderDrawColor(gRenderer, 0, 255, 0, 255);
-		SDL_RenderFillRect(gRenderer, &playerRect);*/
+		SDL_SetRenderDrawColor(gRenderer, 0, 255, 0, 255);
+		SDL_RenderFillRect(gRenderer, &playerRect);
 		for (const auto& fireball : fireball_) {
 			SDL_Rect fireballRect = {
 				static_cast<int>(fireball.fPosX + FIREBALL_SIZE),
@@ -23,8 +23,8 @@ bool Collision::checkCollision(Player& player, bool isInvincible,
 				std::cout << "Collision with fireball - GameOver\n";
 				return true;
 			}
-			/*SDL_SetRenderDrawColor(gRenderer, 0, 0, 255, 255);
-			SDL_RenderFillRect(gRenderer, &fireballRect);*/
+			SDL_SetRenderDrawColor(gRenderer, 0, 0, 255, 255);
+			SDL_RenderFillRect(gRenderer, &fireballRect);
 
 		}
 		/*for (const auto& laser : laser_) {
@@ -73,8 +73,8 @@ bool Collision::checkCollision(Player& player, bool isInvincible,
 							std::cout << "Collision with laser - GameOver\n";
 							return true;
 						}
-						/*SDL_SetRenderDrawColor(gRenderer, 255, 0, 0, 255);
-						SDL_RenderFillRect(gRenderer, &laserSegment);*/
+						SDL_SetRenderDrawColor(gRenderer, 255, 0, 0, 255);
+						SDL_RenderFillRect(gRenderer, &laserSegment);
 					}
 				}
 			}
