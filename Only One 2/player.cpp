@@ -1,6 +1,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "player.h"
+#include <iostream>
 
 extern SDL_Renderer* gRenderer;
 Player::Player() {
@@ -10,6 +11,7 @@ Player::Player() {
 	mVelY = 0;
 }
 void Player::handleEvent(SDL_Event& e) {
+	std::cerr << "fhihifu\n";
 	if (e.type == SDL_KEYDOWN && e.key.repeat == 0) {
 		
 		switch (e.key.keysym.sym) {
