@@ -23,8 +23,8 @@ bool Collision::checkCollision(Player& player, bool isInvincible,
 				std::cout << "Collision with fireball - GameOver\n";
 				return true;
 			}
-			SDL_SetRenderDrawColor(gRenderer, 0, 0, 255, 255);
-			SDL_RenderFillRect(gRenderer, &fireballRect);
+			/*SDL_SetRenderDrawColor(gRenderer, 0, 0, 255, 255);
+			SDL_RenderFillRect(gRenderer, &fireballRect);*/
 
 		}
 		/*for (const auto& laser : laser_) {
@@ -73,8 +73,8 @@ bool Collision::checkCollision(Player& player, bool isInvincible,
 							std::cout << "Collision with laser - GameOver\n";
 							return true;
 						}
-						SDL_SetRenderDrawColor(gRenderer, 255, 0, 0, 255);
-						SDL_RenderFillRect(gRenderer, &laserSegment);
+						/*SDL_SetRenderDrawColor(gRenderer, 255, 0, 0, 255);
+						SDL_RenderFillRect(gRenderer, &laserSegment);*/
 					}
 				}
 			}
