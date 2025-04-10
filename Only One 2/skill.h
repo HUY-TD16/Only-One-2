@@ -9,6 +9,7 @@
 class Skills {
 public:
 	Skills();
+	void reset();
 	void handleInput(const Uint8* key, Uint32 currentTime, SDL_Event& event, Player& player, std::vector<ClearEffect>& clearEffect, std::vector<FireballIndex>& fireball);
 	void update(Uint32 currentTime);
 	bool res() { return isInvincible; }
