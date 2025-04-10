@@ -1,4 +1,4 @@
-#include "skill.h"
+﻿#include "skill.h"
 #include <cmath>
 #include <iostream>
 
@@ -39,18 +39,23 @@ void Skills::handleInput(const Uint8* key, Uint32 currentTime, SDL_Event& event,
 		effect.y = playerCenterY - clearRadius / 2.0f;
 		effect.SpawnTime = currentTime;
 		clearEffect.push_back(effect);
-
-		fireball.erase(
-			std::remove_if(
-				fireball.begin(), fireball.end(), [&](const FireballIndex& f) {
-					float dist = std::sqrt(std::pow(f.fPosX + FIREBALL_SIZE / 2.0f - playerCenterX, 2) +
-						std::pow(f.fPosY + FIREBALL_SIZE / 2.0f - playerCenterY, 2));
-					return dist <= clearRadius;
-				}
-			)
+		auto it = std::remove_if(
+			fireball.begin(), fireball.end(), [&](const FireballIndex& f) {
+				float dist = std::sqrt(
+					std::pow(f.fPosX + FIREBALL_SIZE / 2.0f - playerCenterX, 2) +
+					std::pow(f.fPosY + FIREBALL_SIZE / 2.0f - playerCenterY, 2)
+				);
+				return dist <= clearRadius;
+			}
 		);
+
+		// Chỉ xóa nếu có ít nhất 1 phần tử cần xóa
+		if (it != fireball.end()) {
+			fireball.erase(it, fireball.end());
+		}
 		lastClearTime = currentTime;
 		std::cout << "Clear activate\n";
+		
 	}
 
 }
