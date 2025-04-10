@@ -30,7 +30,13 @@ void Explosion::spawn(Uint32 currentTime, Uint32& lastExplosionTime, Uint32 game
 		}
 	}
 }
-
+void Explosion::reset(Uint32 currentTime) {
+	explosion_.clear();
+	explosionPerSpwan = 1;
+	lastIncreaseTime = currentTime + explosionStartDelay;
+	frame = 0;
+	lastFrameTime = currentTime;
+}
 void Explosion::update(Uint32 currentTime ) {
 	for (ExplosionIndex& explosion : explosion_) {
 		if (!explosion.isActive && currentTime - explosion.spawnTime >= explosionWarningTime) {
