@@ -8,6 +8,7 @@
 class Lasers {
 public:
 	Lasers();
+	void reset(Uint32 currentTime);
 	void spawn(Uint32 currentTime, Player& player, Uint32& lastLaserTime, Uint32 gameStartTime);
 	void update(Uint32 currentTime);
 	std::vector<LaserIndex>& getLaser() { return laser_; }
