@@ -12,6 +12,7 @@
 #include "explosions.h"
 #include "collision.h"
 #include "interface.h"
+#include "animation.h"
 enum class State {
     MENU,
     PLAYING,
@@ -23,18 +24,22 @@ public:
     Game();
     ~Game();
     void update(float deltaTime, Uint32 currentTime);
-    void render();
-    void handleInput(SDL_Event& event);
-    void resetGame();
+    void render(Uint32 currentTime);
+    void handleInput(SDL_Event& event , Uint32 currentTime);
+    void resetGame(Uint32 currentTime);
     void loadHighScores();
     void saveHighScores();
+    void loadMedia();
+    Uint32 getLastFramTime() { return lastFrameTime; }
+    State getState() { return state; }
 private:
     Player player;
+    Animation animation;
     Skills skill;
     FireBall fireball;
     Lasers laser;
     Explosion explosion;
-    Collision collsision;
+    Collision collisision;
     Interface interface;
     std::vector<ClearEffect> clearEffect;
     //Time
@@ -52,3 +57,4 @@ private:
     bool soundOn;
 
 };
+
