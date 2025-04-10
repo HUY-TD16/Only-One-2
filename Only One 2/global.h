@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "LTexture.h"
+//#include "animation.h"
 #include <SDL_ttf.h>
 
 // mÀN HÌNH 
@@ -27,6 +28,15 @@ const Uint32 invincibilityCoolDown = 10000;
 void updateFrameTime();
 bool init();
 void close();
+//void loadMedia(Animation& animation);
 void logErrorAndExit(const char* msg, const char* error);
 bool isButtonClick(int x, int y, SDL_Rect button);
 
+//enum class State {
+//    MENU,
+//    PLAYING,
+//    PAUSED,
+//    GAME_OVER
+//};
+//
+//extern State state;
