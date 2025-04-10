@@ -9,7 +9,13 @@ Skills::Skills() {
 	lastDashTime = SDL_GetTicks();
 	lastClearTime = SDL_GetTicks();
 }
-
+void Skills::reset() {
+	lastInvincibilityTime = 0;
+	invincibilityEndTime = 0;
+	lastDashTime = 0;
+	lastClearTime = 0;
+	isInvincible = false;
+}
 void Skills::handleInput(const Uint8* key, Uint32 currentTime, SDL_Event& event, Player& player, std::vector<ClearEffect>& clearEffect, std::vector<FireballIndex>& fireball) {
 	if (key[SDL_SCANCODE_A] && (currentTime - lastInvincibilityTime >= invincibilityCoolDown )&& !isInvincible) {
 		isInvincible = true;
