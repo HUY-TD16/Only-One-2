@@ -19,11 +19,8 @@ private:
 	Uint32 lastInvincibilityTime;
 	Uint32 invincibilityEndTime;
 	const Uint32 invincibilityDuration = 2000;
-	const Uint32 invincibilityCoolDown = 10000;
 	bool isInvincible;
 	Uint32 lastDashTime;
-	const Uint32 dashCoolDown = 5000;
 	Uint32 lastClearTime;
-	const Uint32 clearCoolDown = 10000;
 	const float clearRadius = PLAYER_SIZE * 5.0f;
 };
