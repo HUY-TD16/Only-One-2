@@ -91,13 +91,14 @@ int main(int args, char* argc[]) {
 				clearEffect.end()
 			);
 
-			/*if (collision.checkCollision(player, skill.res() , fireball.getFireball(), fireball, laser.getLaser(), laser, explosion.getExplosion(), explosion)) {
+			if (collision.checkCollision(player, skill.res() , fireball.getFireball(), fireball, laser.getLaser(), laser, explosion.getExplosion(), explosion)) {
 				quit = true;
-			}*/
+			}
 			fireball.render(gRenderer);
 			interface.ProgressBars(currentTime, skill.getLastInvicibility(), skill.getLastDashTime(), skill.getLastClear());
 			interface.Timer(currentTime);
-			interface.Pause();
+			//interface.Pause();
+			//interface.GameOver(currentTime, true);
 			SDL_RenderPresent(gRenderer);
 			SDL_Delay(16);
 		}
