@@ -17,6 +17,11 @@ FireBall::FireBall() {
 	Fireball_Sprite.loadFromFile("Image/fireball_sprite.png");
 	lastIncreaseTime = SDL_GetTicks();
 }
+void FireBall::reset(Uint32 currentTime) {
+	fireball_.clear();
+	fireballSpawn = 1;
+	lastIncreaseTime = currentTime;
+}
 void FireBall::spawn(Uint32 currentTime, Player& player, Uint32& lastSpawmTime) {
 	if (currentTime - lastSpawmTime >= spawnInterval_) {
 		for (int i = 0; i < fireballSpawn; i++) {
