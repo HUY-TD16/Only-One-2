@@ -100,6 +100,7 @@ void  FireBall::update(float deltaTime , Uint32 currentTime ) {
 
 
 void FireBall::render(SDL_Renderer* gRenderer) {
+	
 	currentClip = spriteClips[frame];
 	for (const auto& fireball : fireball_) {
 		double angle = atan2(fireball.fVelY, fireball.fVelX) * (180.0 / M_PI);
