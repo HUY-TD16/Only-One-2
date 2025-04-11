@@ -110,3 +110,11 @@ void Animation::updateAnimationState() {
 	else if (keyState.count(SDLK_UP)) { setAction(Action::RUN); setDirection(Direction::BACK); }
 	else if (keyState.count(SDLK_DOWN)) { setAction(Action::RUN); setDirection(Direction::FRONT); }
 }
+
+void Animation::reset() {
+	currentAction = Action::IDLE;
+	currentDirection = Direction::FRONT;
+	currentFrame = 0;
+	lastUpdateTime = SDL_GetTicks();
+	keyState.clear();
+}
