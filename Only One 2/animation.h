@@ -30,6 +30,7 @@ public:
 	void setDirection(Direction direction);
 	void handleInput(SDL_Event& e);
 	void updateAnimationState();
+	void reset();
 private:
 	struct FrameInfo {
 		SDL_Texture* gTexture;
