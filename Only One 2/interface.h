@@ -11,8 +11,9 @@ extern SDL_Renderer* gRenderer;
 class Interface {
 public:
 	Interface();
-	void GameOver(Uint32 currentTime , bool isNewHighScore);
+	void GameOver(Uint32 finalTime , bool isNewHighScore);
 	void Pause();
+	void ButtonPause();
 	void Menu();
 	void Timer(Uint32 currentTime);
 	void ProgressBars(Uint32 currentTime, Uint32 lastInvincibilityTime, Uint32 lastDashTime , Uint32 lastClearTime);
