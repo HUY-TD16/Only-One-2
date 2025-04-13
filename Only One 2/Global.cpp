@@ -38,6 +38,7 @@ bool init() {
 		return false;
 	}
 	SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+	SDL_SetRenderDrawBlendMode(gRenderer, SDL_BLENDMODE_BLEND);
 	int imgFlag = IMG_INIT_PNG;
 	if (!(IMG_Init(imgFlag) & imgFlag)) {
 		logErrorAndExit("imgFlag" , SDL_GetError());
