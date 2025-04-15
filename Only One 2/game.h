@@ -2,6 +2,7 @@
 
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include <SDL_mixer.h>
 #include <vector>
 #include <string>
 #include "player.h"
@@ -54,7 +55,7 @@ private:
     bool isNewHighScore;
     bool showTutorial;
     bool showHighScore;
-    bool soundOn;
+    
 
 };
 
