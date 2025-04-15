@@ -25,6 +25,7 @@ void FireBall::reset(Uint32 currentTime) {
 void FireBall::spawn(Uint32 currentTime, Player& player, Uint32& lastSpawmTime) {
 	if (currentTime - lastSpawmTime >= spawnInterval_) {
 		for (int i = 0; i < fireballSpawn; i++) {
+			//Mix_PlayChannel(-1, musicFireball, 0);
 
 			FireballIndex fireball{};
 			int side = std::rand() % 4;
