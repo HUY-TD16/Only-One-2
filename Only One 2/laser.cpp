@@ -77,6 +77,9 @@ void Lasers::update(Uint32 currentTime) {
 void Lasers::render(SDL_Renderer* gRenderer) {
 	for (auto& laser : laser_) {
 		if (laser.isActive) {
+			if (soundOn) {
+				Mix_PlayChannel(-1, musicLaser, 0);
+			}
 			SDL_SetRenderDrawColor(gRenderer, 255, 255, 0, 255); // Màu vàng
 		}
 		else {
