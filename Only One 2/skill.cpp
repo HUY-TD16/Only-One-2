@@ -62,7 +62,9 @@ void Skills::loadMediaSkill() {
 
 void Skills::handleInput(const Uint8* key, Uint32 currentTime, SDL_Event& event, Player& player, std::vector<ClearEffect>& clearEffect, std::vector<FireballIndex>& fireball) {
 	if (key[SDL_SCANCODE_A] && (currentTime - lastInvincibilityTime >= invincibilityCoolDown )&& !isInvincible) {
-		Mix_PlayChannel(-1, musicInvinbility, 0);
+		if (soundOn) {
+			Mix_PlayChannel(-1, musicInvinbility, 0);
+		}
 		isInvincible = true;
 		lastInvincibilityTime = currentTime;
 		invincibilityEndTime = currentTime + invincibilityDuration;
@@ -72,7 +74,8 @@ void Skills::handleInput(const Uint8* key, Uint32 currentTime, SDL_Event& event,
 		std::cout << "Invincibility activated\n";
 	}
 	else if (key[SDL_SCANCODE_S] && (currentTime - lastDashTime >= dashCoolDown)) {
-		Mix_PlayChannel(-1, musicDash, 0);
+		
+		if (soundOn) Mix_PlayChannel(-1, musicDash, 0);
 		int dx = player.VelX();
 		int dy = player.VelY();
 
@@ -87,7 +90,7 @@ void Skills::handleInput(const Uint8* key, Uint32 currentTime, SDL_Event& event,
 		}
 	}
 	else if (key[SDL_SCANCODE_D] && currentTime - lastClearTime >= clearCoolDown) {
-		Mix_PlayChannel(-1, musicClear, 0);
+		if (soundOn ) Mix_PlayChannel(-1, musicClear, 0);
 		float playerCenterX = player.getX() + PLAYER_SIZE / 2.0f;
 		float playerCenterY = player.getY() + PLAYER_SIZE / 2.0f;
 
