@@ -122,11 +122,11 @@ bool loadMedia() {
 		success = false;
 		//std::cerr << "jdisdjisdj\n";
 	}
-	musicFireball = Mix_LoadWAV("soundtest/scratch.wav");
+	/*musicFireball = Mix_LoadWAV("soundtest/scratch.wav");
 	if (musicFireball == NULL) {
 		logErrorAndExit("Failed musicFireball", Mix_GetError());
 		success = false;
-	}
+	}*/
 	musicExplosion = Mix_LoadWAV("sound/explosion.wav");
 	if (musicExplosion == NULL) {
 		logErrorAndExit("Failed musicExplosion", Mix_GetError());
