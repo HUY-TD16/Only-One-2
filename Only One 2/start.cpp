@@ -5,7 +5,10 @@
 int main(int args, char* argc[]) {
 	std::srand(static_cast<unsigned>(std::time(NULL)));
 	if (!init()) {
-		std::cout << "false \n";
+		std::cout << "false Init \n";
+	}
+	else if (!loadMedia()) {
+		std::cerr << "false mediaload \n";
 	}
 	else {
 		Game game;
