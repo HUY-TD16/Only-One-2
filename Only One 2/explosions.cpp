@@ -83,7 +83,9 @@ void Explosion::render(SDL_Renderer* renderer) {
 		SDL_Rect explosionRect = { static_cast<int>(explosion.ePosX), static_cast<int>(explosion.ePosY),
 								   explosionRadius, explosionRadius };
 		if (explosion.isActive) {
-			Mix_PlayChannel(-1, musicExplosion, 0);
+			if (soundOn) {
+				Mix_PlayChannel(-1, musicExplosion, 0);
+			}
 			Explosion_Sprite.render(static_cast<int>(std::round(explosion.ePosX)), static_cast<int>(std::round(explosion.ePosY)), &currentClip , &explosionRect );
 		}
 		else {
